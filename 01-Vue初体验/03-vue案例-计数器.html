@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计数器</title>
+    <style>
+       div {
+        margin: 0;
+        padding: 0;
+       }
+       
+       h2 {
+           display: inline-block;
+           padding: 10px;
+       }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="sub()">-</button>
+        <h2>{{count}}</h2>
+        <button @click="add()">+</button>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+    const app = new new Vue({
+        el: '#app',
+        data: {
+            count: 0,
+        },
+        methods: {
+           add:function() {
+            if(this.count >=10)return;
+            this.count++
+            },
+            sub:function() {
+            if(this.count <= 0)return;
+            this.count--
+            }    
+        }
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电影报刊</title>
+</head>
+<body>
+   <script src="../js/vue.js"></script>
+   <div id="app">
+        <ul>
+            <h1>{{messages}}</h1>
+            <li v-for="(item,index) in movies">{{item}}</li>
+        </ul>
+   </div>
+   <script>
+       const app = new new Vue({
+           el: '#app',
+           data: {
+            messages: '电影杂志',
+            movies: ['电影名称','电影上映时间','电影价格','电影票房']
+           }
+            
+       })
+   </script>
+</body>
+</html>
