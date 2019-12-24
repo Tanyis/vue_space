@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作业(v-for和v-bind的结合)</title>
+</head>
+<style>
+    .active{
+      color:red;
+    }
+    [v-cloak]{
+     display: none;   
+    }
+  </style>
+</head>
+<body>
+    <script src="../js/vue.js"></script>
+    <div id="app">
+        <ul>
+            <li v-for="(item,index) in movies" :key="item" :class="Active(index,active)" @click="changeColor(index)">{{ index }}  --- {{ item }}</li>
+        </ul>
+    </div>
+    <script>
+     let app = new Vue({
+         el: '#app',
+         data: {
+             currentIndex: 0,
+             active: 'active',
+             movies: ['海贼王','海王','火影忍者','七龙珠']
+         },
+         methods: {
+             changeColor(index) {
+                 this.currentIndex = index
+             },
+             Active(index,active) {
+               if(this.currentIndex === index){
+                   return[
+                      this.active,
+                   ]
+               }
+         }
+     },
+     })
+    </script>
+  </script>
+</html>

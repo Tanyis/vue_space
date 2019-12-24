@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue绑定</title>
+    <style>
+        a {
+            padding: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <script src="../js/vue.js"></script>
+    <div id="app">
+        <a :href="baid_url">{{ message1 }}</a>
+        <a :href="tanyi_url">{{ message2 }}</a>
+    </div>
+   <script>
+       var app = new Vue({
+           el: '#app',
+           data: {
+            message1 : "百度一下",
+            message2 : "This is my github",
+            baid_url: "https://www.baidu.com/",
+            tanyi_url: "https://github.com/Tanyis"
+           }
+       })
+   </script>
+</body>
+
+</html>
