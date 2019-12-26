@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件模板 </title>
+</head>
+<body>
+    <div id="app">
+        <cpn1></cpn1>
+        <cpn2></cpn2>
+    </div>
+    <template id="cpn1">
+        <div>
+            <ul>
+                <li >肖申克的救赎</li >
+            </ul>
+        </div>
+    </template>
+    <template id="cpn2">
+        <div>电影标题</div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '电影标题',
+            movies: ['海贼王','航海王','海王','肖申克的救赎']
+        },
+        components: {
+            cpn1:{
+          template:'#cpn1'
+        },
+        cpn2: {
+          template: '#cpn2'
+          }
+        }
+    })
+
+    </script>    
+</body>
+</html>
